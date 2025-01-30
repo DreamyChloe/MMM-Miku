@@ -1,0 +1,231 @@
+
+# 2025-01-30 13:07:56.358737
++y
+
+# 2025-01-30 13:08:15.107440
++n
+
+# 2025-01-30 13:08:54.357286
++change module references from MMM-Template to MMM-Miku
+
+# 2025-01-30 13:09:23.499151
++y
+
+# 2025-01-30 13:10:04.349997
++/run ren MMM-Template.js MMM-Miku.js
+
+# 2025-01-30 13:10:04.349997
++/run ren MMM-Template.js MMM-Miku.js
+
+# 2025-01-30 13:10:47.937256
++https://docs.magicmirror.builders/development/introduction.html
+
+# 2025-01-30 13:10:52.524109
++y
+
+# 2025-01-30 13:19:16.406167
++https://docs.magicmirror.builders/development/core-module-file.html
+
+# 2025-01-30 13:19:18.753393
++y
+
+# 2025-01-30 13:20:11.441983
++n
+
+# 2025-01-30 13:20:21.916524
++y
+
+# 2025-01-30 13:20:30.589686
++n
+
+# 2025-01-30 13:20:52.456497
++add https://docs.magicmirror.builders/development/node-helper.html to context. dont do anything else
+
+# 2025-01-30 13:20:54.055109
++y
+
+# 2025-01-30 13:21:46.592341
++add https://docs.magicmirror.builders/development/helper-methods.html#module-selection dont do anything else
+
+# 2025-01-30 13:21:48.108850
++y
+
+# 2025-01-30 13:22:11.395426
++add https://docs.magicmirror.builders/development/logger.html to context. dont do anything else
+
+# 2025-01-30 13:22:12.655628
++y
+
+# 2025-01-30 13:22:26.888104
++add https://docs.magicmirror.builders/development/notifications.html to context. dont do anything else
+
+# 2025-01-30 13:22:28.259452
++y
+
+# 2025-01-30 15:00:00.624377
++/add exampleconfig.js
+
+# 2025-01-30 15:01:30.596867
++based on exampleconfig.js, rewrite MMM-Miku.js to a module, that display all images in the given timeframe 
+
+# 2025-01-30 15:02:29.110000
++y
+
+# 2025-01-30 15:05:05.594599
++/add MMM-Miku.css
+
+# 2025-01-30 15:05:32.427064
++use MMM-Miku.css for styling. apply a max size of 500x500 for displaying the content
+
+# 2025-01-30 15:12:13.111028
++rewrite the Readme accordingly
+
+# 2025-01-30 15:19:18.025923
++use 4 whitespace as indentation. enforce it via lint
+
+# 2025-01-30 15:20:06.933883
++y
+
+# 2025-01-30 15:21:35.619622
++/run npm run lint
+
+# 2025-01-30 15:21:35.620627
++/run npm run lint
+
+# 2025-01-30 15:21:39.895696
++/run npm run lint:fix
+
+# 2025-01-30 15:21:39.895696
++/run npm run lint:fix
+
+# 2025-01-30 15:21:44.589325
++n
+
+# 2025-01-30 15:25:04.293157
++/ask what is the updateInterval good for?
+
+# 2025-01-30 15:30:39.922503
++rename the attribute to defaultDelay, otherwise it seems confusing
+
+# 2025-01-30 15:32:41.893760
++y
+
+# 2025-01-30 15:32:41.909668
++/run npm run lint:fix
+
+# 2025-01-30 15:32:41.911666
++/run npm run lint:fix
+
+# 2025-01-30 15:33:21.978482
++y
+
+# 2025-01-30 15:34:27.675315
++check the code again. lint says 73:13  error  'self' is assigned a value but never used  no-unused-vars
+
+# 2025-01-30 15:34:57.302909
++y
+
+# 2025-01-30 15:34:57.313277
++/run npm run lint:fix
+
+# 2025-01-30 15:34:57.314295
++/run npm run lint:fix
+
+# 2025-01-30 15:35:02.370223
++n
+
+# 2025-01-30 16:01:59.666167
++/ask i received  Error reading directory: [Error: ENOENT: no such file or directory, scandir '/home/chloe/MagicMirror/images/day'] when i state /images/day as folder path. how should i modify my config to point it to /home/chloe/MagicMirror/modules/MMM-Miku/images/day ?
+
+# 2025-01-30 16:02:48.165544
++do the change
+
+# 2025-01-30 16:03:40.877757
++do i still need to state modules/MMM-Miku/ as prefix in the config?
+
+# 2025-01-30 16:10:59.142576
++it still doesnt work. Maybe its because of how node_helper is working. Seperate the part to load the images to a new file called image_loader and put it into a subdirectory called src
+
+# 2025-01-30 16:11:16.284490
++y
+
+# 2025-01-30 16:11:24.392635
++/run mkdir src
+
+# 2025-01-30 16:11:24.392635
++/run mkdir src
+
+# 2025-01-30 16:11:32.024515
++n
+
+# 2025-01-30 16:14:19.339113
++change the max size to configurable
+
+# 2025-01-30 16:15:34.557455
++n
+
+# 2025-01-30 16:22:26.043111
++/ask it still gives [Error: ENOENT: no such file or directory, scandir '/home/chloe/MagicMirror/images/day']
+
+# 2025-01-30 16:24:43.405183
++disable fading when value is 0
+
+# 2025-01-30 16:37:38.440395
++n
+
+# 2025-01-30 16:51:32.840069
++review the code in all files and refactor them if necessary
+
+# 2025-01-30 16:52:09.723235
++y
+
+# 2025-01-30 16:52:09.736796
++/run npm run lint
+
+# 2025-01-30 16:52:09.736796
++/run npm run lint
+
+# 2025-01-30 16:52:15.984483
++y
+
+# 2025-01-30 16:52:18.141899
++/run npm run lint:fix
+
+# 2025-01-30 16:52:18.141899
++/run npm run lint:fix
+
+# 2025-01-30 16:52:24.109766
++n
+
+# 2025-01-30 16:53:20.707593
++is scheduleTimer in MMM-Miku.js used at all?
+
+# 2025-01-30 16:53:45.681519
++y
+
+# 2025-01-30 16:53:45.693049
++/run npm run lint:fix
+
+# 2025-01-30 16:53:45.694064
++/run npm run lint:fix
+
+# 2025-01-30 16:58:35.721575
++n
+
+# 2025-01-30 16:58:44.712699
++is the translation file used at all?
+
+# 2025-01-30 16:59:11.061748
++y
+
+# 2025-01-30 16:59:11.077333
++/run rmdir /s /q translations
+
+# 2025-01-30 16:59:11.078342
++/run rmdir /s /q translations
+
+# 2025-01-30 16:59:15.192798
++n
+
+# 2025-01-30 17:17:38.532886
++/exit
