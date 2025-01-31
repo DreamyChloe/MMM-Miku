@@ -67,7 +67,7 @@ To use this module, add it to the `modules` array in the `config/config.js` file
 | Option | Description                                                                                                                |
 |--------|----------------------------------------------------------------------------------------------------------------------------|
 | `schedule` | An array of schedule objects defining when to display certain images.                                                      |
-| `defaultDelay` | The default delay (in milliseconds) between image updates when not specified in the schedule. Default is 60000 (1 minute). |
+| `defaultDuration` | The default duration (in milliseconds) for displaying each image when not specified in the schedule. Default is 60000 (1 minute). |
 | `maxWidth` | The maximum width of the image container in pixels. Default is 340.                                                        |
 | `maxHeight` | The maximum height of the image container in pixels. Default is 340.                                                       |
 

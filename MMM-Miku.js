@@ -1,7 +1,7 @@
 Module.register("MMM-Miku", {
     requiresVersion: "2.29.0",
     defaults: {
-        defaultDelay: 60000,
+        defaultDuration: 60000,
         maxWidth: 340,
         maxHeight: 340,
         schedule: [],
@@ -14,11 +14,30 @@ Module.register("MMM-Miku", {
         this.updateTimer = null
         this.loaded = false
 
+        this.validateSchedules()
         this.updateSchedule()
         var self = this
         setInterval(function () {
             self.updateSchedule()
         }, 60000) // Check schedule every minute
+    },
+
+    validateSchedules: function () {
+        let validSchedules = 0
+        this.config.schedule.forEach((schedule, index) => {
+            if (this.isValidSchedule(schedule)) {
+                validSchedules++
+            } else {
+                console.error(`MMM-Miku: Invalid schedule at index ${index}:`, schedule)
+            }
+        })
+        console.log(`MMM-Miku: Successfully recognized ${validSchedules} out of ${this.config.schedule.length} schedules.`)
+    },
+
+    isValidSchedule: function (schedule) {
+        return schedule.start && schedule.end && schedule.path &&
+               typeof schedule.start === 'string' && typeof schedule.end === 'string' &&
+               typeof schedule.path === 'string'
     },
 
     updateSchedule: function () {
