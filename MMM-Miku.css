@@ -1,3 +1,11 @@
+.MMM-Miku {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 .MMM-Miku .miku-wrapper {
     display: flex;
     justify-content: center;
