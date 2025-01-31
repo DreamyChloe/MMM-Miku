@@ -1,6 +1,7 @@
 # MMM-Miku
 
-A MagicMirror² module for displaying Hatsune Miku content with scheduling functionality.
+A MagicMirror² module for displaying Hatsune Miku content to cheer you up.
+(Of course you can also use it as a simple Diashow Viewer...)
 
 ![Example of MMM-Miku](example.gif)
 
@@ -51,10 +52,10 @@ To use this module, add it to the `modules` array in the `config/config.js` file
                 end: "6:30",
                 path: "modules/MMM-Miku/images/night",
                 duration: 10000,
-                fadeSpeed: 0
+                random: true
             }
         ],
-        defaultDelay: 5000,
+        defaultDelay: 2000,
         maxWidth: 340,
         maxHeight: 340
     }
@@ -76,10 +77,10 @@ To use this module, add it to the `modules` array in the `config/config.js` file
 |--------|-------------|
 | `start` | The start time for this schedule in 24-hour format (e.g., "10:00"). |
 | `end` | The end time for this schedule in 24-hour format (e.g., "23:00"). |
+| `path` | The path to the folder containing images for this schedule, relative to the MagicMirror application folder. |
 | `duration` | (Optional) The duration each image is displayed before switching to the next one, in milliseconds. Default is 5000 (5 seconds). |
 | `fadeSpeed` | (Optional) The speed of the fade animation when changing images, in milliseconds. Default is 0 (no fade). |
 | `random` | (Optional) If true, images are displayed in random order. If false or not set, images are displayed sequentially. |
-| `path` | The path to the folder containing images for this schedule, relative to the MagicMirror application folder. |
 
 ## Images
 
