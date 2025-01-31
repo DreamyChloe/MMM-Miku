@@ -2,7 +2,6 @@ Module.register("MMM-Miku", {
     requiresVersion: "2.29.0",
     defaults: {
         defaultDelay: 60000,
-        fadeSpeed: 0,
         maxWidth: 340,
         maxHeight: 340,
         schedule: [],
@@ -72,11 +71,11 @@ Module.register("MMM-Miku", {
             ? Math.floor(Math.random() * this.imageList.length)
             : (this.currentImageIndex + 1) % this.imageList.length
 
-        this.updateDom(this.config.fadeSpeed === 0 ? 0 : this.config.fadeSpeed)
+        this.updateDom(this.currentSchedule.fadeSpeed === 0 ? 0 : this.currentSchedule.fadeSpeed)
 
         this.updateTimer = setTimeout(() => {
             this.updateImage()
-        }, this.currentSchedule.delay || this.config.defaultDelay)
+        }, this.currentSchedule.duration || 5000)
     },
 
     getDom: function () {

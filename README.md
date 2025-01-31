@@ -43,15 +43,18 @@ To use this module, add it to the `modules` array in the `config/config.js` file
                 start: "6:30",
                 end: "23:00",
                 imageFolderPath: "modules/MMM-Miku/images/day",
+                duration: 5000,
+                fadeSpeed: 1000
             },
             {
                 start: "23:00",
                 end: "6:30",
                 imageFolderPath: "modules/MMM-Miku/images/night",
+                duration: 10000,
+                fadeSpeed: 0
             }
         ],
         defaultDelay: 5000,
-        fadeSpeed: 0,
         maxWidth: 340,
         maxHeight: 340
     }
@@ -64,7 +67,6 @@ To use this module, add it to the `modules` array in the `config/config.js` file
 |--------|----------------------------------------------------------------------------------------------------------------------------|
 | `schedule` | An array of schedule objects defining when to display certain images.                                                      |
 | `defaultDelay` | The default delay (in milliseconds) between image updates when not specified in the schedule. Default is 60000 (1 minute). |
-| `fadeSpeed` | The speed of the fade animation when changing images, in milliseconds. Default is 1000. Set to 0 to disable fading.        |
 | `maxWidth` | The maximum width of the image container in pixels. Default is 340.                                                        |
 | `maxHeight` | The maximum height of the image container in pixels. Default is 340.                                                       |
 
@@ -74,7 +76,8 @@ To use this module, add it to the `modules` array in the `config/config.js` file
 |--------|-------------|
 | `start` | The start time for this schedule in 24-hour format (e.g., "10:00"). |
 | `end` | The end time for this schedule in 24-hour format (e.g., "23:00"). |
-| `delay` | (Optional) The delay between image changes for this schedule, in milliseconds. If not set, `updateInterval` is used. |
+| `duration` | (Optional) The duration each image is displayed before switching to the next one, in milliseconds. Default is 5000 (5 seconds). |
+| `fadeSpeed` | (Optional) The speed of the fade animation when changing images, in milliseconds. Default is 0 (no fade). |
 | `random` | (Optional) If true, images are displayed in random order. If false or not set, images are displayed sequentially. |
 | `imageFolderPath` | The path to the folder containing images for this schedule. |
 
