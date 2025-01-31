@@ -2,7 +2,7 @@
 
 A MagicMirror² module for displaying Hatsune Miku content with scheduling functionality.
 
-![Example of MMM-Miku](./images/example.gif)
+![Example of MMM-Miku](example.gif)
 
 ## Description
 
@@ -74,9 +74,9 @@ To use this module, add it to the `modules` array in the `config/config.js` file
 |--------|-------------|
 | `start` | The start time for this schedule in 24-hour format (e.g., "10:00"). |
 | `end` | The end time for this schedule in 24-hour format (e.g., "23:00"). |
-| `imageFolderPath` | The path to the folder containing images for this schedule. |
 | `delay` | (Optional) The delay between image changes for this schedule, in milliseconds. If not set, `updateInterval` is used. |
 | `random` | (Optional) If true, images are displayed in random order. If false or not set, images are displayed sequentially. |
+| `imageFolderPath` | The path to the folder containing images for this schedule. |
 
 ## Images
 
