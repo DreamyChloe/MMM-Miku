@@ -53,7 +53,7 @@ Module.register("MMM-Miku", {
     },
 
     loadImageList: function () {
-        this.sendSocketNotification("GET_IMAGE_LIST", this.currentSchedule.imageFolderPath)
+        this.sendSocketNotification("GET_IMAGE_LIST", this.currentSchedule.path)
     },
 
     socketNotificationReceived: function (notification, payload) {
@@ -95,7 +95,7 @@ Module.register("MMM-Miku", {
         }
 
         var img = document.createElement("img")
-        img.src = this.currentSchedule.imageFolderPath + "/" + this.imageList[this.currentImageIndex]
+        img.src = this.currentSchedule.path + "/" + this.imageList[this.currentImageIndex]
         wrapper.appendChild(img)
 
         return wrapper

@@ -42,14 +42,14 @@ To use this module, add it to the `modules` array in the `config/config.js` file
             {
                 start: "6:30",
                 end: "23:00",
-                imageFolderPath: "modules/MMM-Miku/images/day",
+                path: "modules/MMM-Miku/images/day",
                 duration: 5000,
                 fadeSpeed: 1000
             },
             {
                 start: "23:00",
                 end: "6:30",
-                imageFolderPath: "modules/MMM-Miku/images/night",
+                path: "modules/MMM-Miku/images/night",
                 duration: 10000,
                 fadeSpeed: 0
             }
@@ -79,7 +79,7 @@ To use this module, add it to the `modules` array in the `config/config.js` file
 | `duration` | (Optional) The duration each image is displayed before switching to the next one, in milliseconds. Default is 5000 (5 seconds). |
 | `fadeSpeed` | (Optional) The speed of the fade animation when changing images, in milliseconds. Default is 0 (no fade). |
 | `random` | (Optional) If true, images are displayed in random order. If false or not set, images are displayed sequentially. |
-| `imageFolderPath` | The path to the folder containing images for this schedule. |
+| `path` | The path to the folder containing images for this schedule, relative to the MagicMirror application folder. |
 
 ## Images
 
