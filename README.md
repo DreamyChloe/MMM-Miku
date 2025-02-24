@@ -55,7 +55,8 @@ To use this module, add it to the `modules` array in the `config/config.js` file
                 random: true
             }
         ],
-        defaultDelay: 2000,
+        defaultDuration: 2000, 
+        defaultFadeSpeed: 100,
         maxWidth: 340,
         maxHeight: 340
     }
@@ -64,12 +65,13 @@ To use this module, add it to the `modules` array in the `config/config.js` file
 
 ### Configuration Options
 
-| Option | Description                                                                                                                |
-|--------|----------------------------------------------------------------------------------------------------------------------------|
-| `schedule` | An array of schedule objects defining when to display certain images.                                                      |
-| `defaultDuration` | The default duration (in milliseconds) for displaying each image when not specified in the schedule. Default is 60000 (1 minute). |
-| `maxWidth` | The maximum width of the image container in pixels. Default is 340.                                                        |
-| `maxHeight` | The maximum height of the image container in pixels. Default is 340.                                                       |
+| Option             | Description                                                                                                                       |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| `schedule`         | An array of schedule objects defining when to display certain images.                                                             |
+| `defaultDuration`  | The default duration (in milliseconds) for displaying each image when not specified in the schedule. Default is 60000 (1 minute). |
+| `defaultFadeSpeed` | The default fadespeed (in milliseconds) for displaying each image when not specified in the schedule. Default is 0. |
+| `maxWidth`         | The maximum width of the image container in pixels. Default is 340.                                                               |
+| `maxHeight`        | The maximum height of the image container in pixels. Default is 340.                                                              |
 
 #### Schedule Object
 
@@ -78,8 +80,8 @@ To use this module, add it to the `modules` array in the `config/config.js` file
 | `start` | The start time for this schedule in 24-hour format (e.g., "10:00"). |
 | `end` | The end time for this schedule in 24-hour format (e.g., "23:00"). |
 | `path` | The path to the folder containing images for this schedule, relative to the MagicMirror application folder. |
-| `duration` | (Optional) The duration each image is displayed before switching to the next one, in milliseconds. Default is 5000 (5 seconds). |
-| `fadeSpeed` | (Optional) The speed of the fade animation when changing images, in milliseconds. Default is 0 (no fade). |
+| `duration` | (Optional) The duration each image is displayed before switching to the next one, in milliseconds. |
+| `fadeSpeed` | (Optional) The speed of the fade animation when changing images, in milliseconds. |
 | `random` | (Optional) If true, images are displayed in random order. If false or not set, images are displayed sequentially. |
 
 ## Images

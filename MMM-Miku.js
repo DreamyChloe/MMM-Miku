@@ -2,6 +2,7 @@ Module.register("MMM-Miku", {
     requiresVersion: "2.29.0",
     defaults: {
         defaultDuration: 60000,
+        defaultFadeSpeed: 0,
         maxWidth: 340,
         maxHeight: 340,
         schedule: [],
@@ -16,7 +17,7 @@ Module.register("MMM-Miku", {
 
         this.validateSchedules()
         this.updateSchedule()
-        var self = this
+        let self = this
         setInterval(function () {
             self.updateSchedule()
         }, 60000) // Check schedule every minute
@@ -35,9 +36,9 @@ Module.register("MMM-Miku", {
     },
 
     isValidSchedule: function (schedule) {
-        return schedule.start && schedule.end && schedule.path &&
-               typeof schedule.start === 'string' && typeof schedule.end === 'string' &&
-               typeof schedule.path === 'string'
+        return schedule.start && schedule.end && schedule.path
+          && typeof schedule.start === "string" && typeof schedule.end === "string"
+          && typeof schedule.path === "string"
     },
 
     updateSchedule: function () {
@@ -55,9 +56,9 @@ Module.register("MMM-Miku", {
     },
 
     isTimeInRange: function (time, start, end) {
-        var now = this.timeToMinutes(time)
-        var startTime = this.timeToMinutes(start)
-        var endTime = this.timeToMinutes(end)
+        let now = this.timeToMinutes(time)
+        let startTime = this.timeToMinutes(start)
+        let endTime = this.timeToMinutes(end)
 
         if (startTime < endTime) {
             return now >= startTime && now < endTime
@@ -67,7 +68,7 @@ Module.register("MMM-Miku", {
     },
 
     timeToMinutes: function (time) {
-        var parts = time.split(":")
+        let parts = time.split(":")
         return parseInt(parts[0]) * 60 + parseInt(parts[1])
     },
 
@@ -90,15 +91,16 @@ Module.register("MMM-Miku", {
             ? Math.floor(Math.random() * this.imageList.length)
             : (this.currentImageIndex + 1) % this.imageList.length
 
-        this.updateDom(this.currentSchedule.fadeSpeed === 0 ? 0 : this.currentSchedule.fadeSpeed)
+        const fadeSpeed = this.currentSchedule.fadeSpeed ?? this.config.defaultFadeSpeed
+        this.updateDom(fadeSpeed)
 
         this.updateTimer = setTimeout(() => {
             this.updateImage()
-        }, this.currentSchedule.duration || 5000)
+        }, this.currentSchedule.duration || this.config.defaultDuration)
     },
 
     getDom: function () {
-        var wrapper = document.createElement("div")
+        let wrapper = document.createElement("div")
         wrapper.className = "miku-wrapper"
         wrapper.style.maxWidth = this.config.maxWidth + "px"
         wrapper.style.maxHeight = this.config.maxHeight + "px"
@@ -113,7 +115,7 @@ Module.register("MMM-Miku", {
             return wrapper
         }
 
-        var img = document.createElement("img")
+        let img = document.createElement("img")
         img.src = this.currentSchedule.path + "/" + this.imageList[this.currentImageIndex]
         wrapper.appendChild(img)
 
